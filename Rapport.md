@@ -6,7 +6,7 @@
 
 
 
-###Pedagogical objectives
+### Pedagogical objectives
 Build your own Docker images
 
 Become familiar with lightweight process supervision for Docker
