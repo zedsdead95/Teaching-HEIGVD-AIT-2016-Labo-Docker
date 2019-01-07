@@ -70,6 +70,7 @@ In order to do this, we need to add a new abstract layer such as a process super
 
 **[M6] In our current solution, although the load balancer configuration is changing dynamically, it doesn't follow dynamically the configuration of our distributed system when web servers are added or removed. If we take a closer look at the run.sh script, we see two calls to sed which will replace two lines in the haproxy.cfg configuration file just before we start haproxy. You clearly see that the configuration file has two lines and the script will replace these two lines. What happens if we add more web server nodes? Do you think it is really dynamic? It's far away from being a dynamic configuration. Can you propose a solution to solve this?**
 
+If we add some nodes we also have to add them in the load balancer config file. Currently this has to be done manually which is bad. A solution, in this lab, would be the usage of a template engine. The template will use the datas provided by the **SERF agents** to generate the config file.
 
 
 
