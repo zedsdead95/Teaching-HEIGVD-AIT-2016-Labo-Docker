@@ -63,6 +63,7 @@ Then add the new container to the **run.sh** script:
 
 Next modify the **provision.sh** and add these lines:
 ```docker rm -f s3 2>/dev/null || true docker ```
+
 ```run -d --name s3 softengheigvd/webapp```
 
 
