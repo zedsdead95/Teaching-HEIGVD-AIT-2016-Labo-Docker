@@ -56,6 +56,7 @@ No we can't use this solution for a production environement. The main problems a
 First we need to modify the **haproxy.cfg**:
 
 In the "list of nodes" part add the server 
+
 ```server s3 <s3>:3000 check```
 
 
