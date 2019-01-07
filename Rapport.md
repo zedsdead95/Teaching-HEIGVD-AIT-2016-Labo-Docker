@@ -54,7 +54,9 @@ No we can't use this solution for a production environement. The main problems a
 **[M2] Describe what you need to do to add new webapp container to the infrastructure. Give the exact steps of what you have to do without modifiying the way the things are done. Hint: You probably have to modify some configuration and script files in a Docker image.**
 
 First we need to modify the **haproxy.cfg**:
-In the "list of nodes" part add the server ```server s3 <s3>:3000 check```
+
+In the "list of nodes" part add the server 
+```server s3 <s3>:3000 check```
 
 
 
