@@ -61,6 +61,10 @@ Then add the new container to the **run.sh** script:
 
 ```sed -i 's/<s3>/$S3_PORT_3000_TCP_ADDR/g' /usr/local/etc/haproxy/haproxy.cfg```
 
+Next modify the **provision.sh** and add these lines:
+```docker rm -f s3 2>/dev/null || true docker 
+run -d --name s3 softengheigvd/webapp```
+
 
 **[M3] Based on your previous answers, you have detected some issues in the current solution. Now propose a better approach at a high level.**
 
