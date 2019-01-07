@@ -53,10 +53,13 @@ No we can't use this solution for a production environement. The main problems a
 
 **[M2] Describe what you need to do to add new webapp container to the infrastructure. Give the exact steps of what you have to do without modifiying the way the things are done. Hint: You probably have to modify some configuration and script files in a Docker image.**
 
-First we need to modify the **haproxy.cfg**:
+First we need to modify the **haproxy.cfg** and add a new node in the load balancer:
 
 In the "Define the list of nodes" part add ```server s3 <s3>:3000 check```
 
+Then add the new container to the **run.sh** script:
+
+```sed -i 's/<s3>/$S3_PORT_3000_TCP_ADDR/g' /usr/local/etc/haproxy/haproxy.cfg```
 
 
 **[M3] Based on your previous answers, you have detected some issues in the current solution. Now propose a better approach at a high level.**
