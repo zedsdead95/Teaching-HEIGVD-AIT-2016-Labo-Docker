@@ -97,7 +97,7 @@ If we add some nodes we also have to add them in the load balancer config file. 
 
 
 
-###Task 1
+### Task 1
 
 
 We followed all the instructions, build the new images and killed the previous containers and rebuild them after modifyig the Dockerfiles.
@@ -136,7 +136,7 @@ We did that, and rebuild images and restarted the containers.
 	
 	
 	
-###Task 2
+### Task 2
 
 After installing serf dependances we execute
 
@@ -161,7 +161,7 @@ Then we created the bridge and killed all containers.
 The other solution may be: ZooKeeper or doozerd.
 
 
-##Task 3
+## Task 3
 We copied the scripts as asked.
 
 We modified the dockerfile.
@@ -173,7 +173,7 @@ We then build and run our docker images/containers.
 2. For the in-container logs, we copies both logs from vagrant for ha container and the bash log in the same file :)
 
 
-##Task 4
+## Task 4
 
 First we install nodejs.
 
