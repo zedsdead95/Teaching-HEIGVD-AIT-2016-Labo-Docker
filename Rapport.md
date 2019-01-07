@@ -53,15 +53,15 @@ No we can't use this solution for a production environement. The main problems a
 
 **[M2] Describe what you need to do to add new webapp container to the infrastructure. Give the exact steps of what you have to do without modifiying the way the things are done. Hint: You probably have to modify some configuration and script files in a Docker image.**
 
-First we need to modify the **haproxy.cfg** and add a new node in the load balancer:
+- First we need to modify the **haproxy.cfg** and add a new node in the load balancer:
 
 In the "Define the list of nodes" part add ```server s3 <s3>:3000 check```
 
-Then add the new container to the **run.sh** script:
+- Then add the new container to the **run.sh** script:
 
 ```sed -i 's/<s3>/$S3_PORT_3000_TCP_ADDR/g' /usr/local/etc/haproxy/haproxy.cfg```
 
-Next modify the **provision.sh**:
+- Next modify the **provision.sh**:
 
 add these lines
 
@@ -69,11 +69,11 @@ add these lines
 
 ```run -d --name s3 softengheigvd/webapp```
 
-modify the last line like this
+modify the last line like this (add --link s3)
 
 ```docker run -d -p 80:80 -p 1936:1936 -p 9999:9999 --link s1 --link s2 --link s3 --name ha softengheigvd/ha```
 
-Finally, just type ```vagrant provision``` in your favorite command line terminal so that the changes become effective.
+- Finally, just type ```vagrant provision``` in your favorite command line terminal so that the changes become effective.
 
 
 
