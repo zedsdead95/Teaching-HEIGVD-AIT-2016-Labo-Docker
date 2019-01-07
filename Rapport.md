@@ -154,9 +154,11 @@ Then we created the bridge and killed all containers.
 
 1. the logs are in the logs folder
 
-2. The answer is up, in task 0.
+2. The problem with the current solution is that we need to be careful on the order of containers starting. Indeed, if we start the web apps nodes before the haproxy, then the web apps will try to join the cluster but won't be able to do this because the cluster is started by the haproxy container which is not yet started himself. In addition, if one web app fail to join the cluster, its **SERF agent** starting will also fail.
 
-3. //TODO by loic
+3. **SERF** is a cluster managment tool based on the **GOSSIP** Protocol. Each nodes run a **SERF agent** that communicate with other and share its status. Thanks to this, the cluster (and all its nodes) is always aware of the addition of a new node or the deletion of an existing node in the cluster. The **GOSSIP** Protocol is built on UDP to broadcast messages between the cluster's nodes. 
+
+The other solution may be: ZooKeeper or doozerd.
 
 
 ##Task 3
