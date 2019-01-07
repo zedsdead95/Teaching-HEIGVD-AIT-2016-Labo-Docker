@@ -97,7 +97,7 @@ If we add some nodes we also have to add them in the load balancer config file. 
 
 
 
-### Task 1
+## Task 1
 
 
 We followed all the instructions, build the new images and killed the previous containers and rebuild them after modifyig the Dockerfiles.
@@ -136,7 +136,7 @@ We did that, and rebuild images and restarted the containers.
 	
 	
 	
-### Task 2
+## Task 2
 
 After installing serf dependances we execute
 
