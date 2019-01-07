@@ -61,9 +61,11 @@ A better aproach would be to have a daemon software always running in background
 
 **[M4] You probably noticed that the list of web application nodes is hardcoded in the load balancer configuration. How can we manage the web app nodes in a more dynamic fashion?**
 
-
+We need to use a tool that runs on all nodes and exchange message periodically in order to know which node is currently running and update the config files dynamically. This tool, for this lab, is named **SERF**. This tool allows us to update the load balancer configuration dynamically.
 
 **[M5] In the physical or virtual machines of a typical infrastructure we tend to have not only one main process (like the web server or the load balancer) running, but a few additional processes on the side to perform management tasks.**
+
+
 
 
 
