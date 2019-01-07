@@ -180,7 +180,12 @@ First we install nodejs.
 Then we modify the scripts as specified.
 
 
-1. TODO loic
+1. Each **RUN** command result in the creation of a layer. Therefore, it is more light to do only one **RUN** instruction instead of three. The less layer we have the less memory space it takes, it's a gain of performance and time. However, when it comes to rebuild an image with the addition of an extra library for instance, it's more advised to have multiple layer because all the layer goes in cache and only the layer impacted by the new modifications are rebuild the other are simply taken from the cache memory. If there was only one **RUN** command, all the image would had to be rebuilt.
+
+The squashing is the reduction of the layers number in a docker image without losing the benefit of the cache memory.
+
+The flattening goal is to reduce the size of a docker container by deleting its the history.
+
 
 2.
 
