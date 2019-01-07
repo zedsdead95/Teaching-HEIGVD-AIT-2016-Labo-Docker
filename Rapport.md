@@ -187,13 +187,52 @@ The **squashing** is the reduction of the layers number in a docker image withou
 The **flattening** goal is to reduce the size of a docker container by deleting its history.
 
 
-2.
+2. Our solution is that there should be the least RUN instructions possible to avoid having a lot of "layers" when building a docker image. This implementation requires a repetition of several instructions with the && operator. But the disadvantage using this technique, is that a run command would probably grow very large and instructions could be repeated.
+This is why using a RUN for a unique operation is more proper, each opeation on a different line. These are two "schools" but we prefer the second one :D !
 
 3. We got the log save on logs folder
 
 	The file for docker logs is named docker_log
 
-4. TODO Loic
+4. Based on the last three logs (inspect), we can see that we are the output is manually generated in the cfg file. What we should do is to find a mechanism that will do this automatically.
+
+
+
+## Task 5
+
+1. haproxy files are provides such as other log files inside the logs folder
+
+2. Here is the content of the folder
+
+	![alt](img/10.png)
+
+
+3. The docker ps log file is in the logs folder
+
+## Task 6
+
+We replaced the  ha/services/ha/run script by the following script part.
+
+We then modified the two scripts member-join and member-leave as told.
+
+Then we rebuild re-run all the containers/images
+
+Finally we can confortly see that we can easily start our nodes on  http://192.168.42.42 
+
+![alt](img/11.png)
+
+1. here are the screenshot we made:
+
+	![alt](img/12.png)
+
+ 	log file for docker ps log is in the logs folder
+
+2. Personnaly we liked this solution eventhought it was quite long to implement.
+
+
+##Conclusion
+
+This lab was quite simple to realize thanks to the long but detailed steps and explanations. But we found that this lab was very long to finish nevertherless. Thanks very much for these useful steps for our future job or future tasks we may have to do on our professionnal life.
 
 
 
